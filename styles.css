@@ -11,17 +11,23 @@ body {
 
 /* header */
 header {
-  background-color: rgb(61, 59, 59);
-  padding: 20px;
+  position: fixed; /* Add this line to make the header fixed */
+  top: 0; /* Stick it to the top of the viewport */
+  background-color: black;
+  padding-bottom: 0px;
   align-items: center;
   justify-content: space-between;
   display: flex;
+  width: 100%; /* Take up the full width of the viewport */
+  overflow: hidden;
+  z-index: 1000; /* Add z-index to control its stacking order */
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
   justify-content: right;
+  font-weight: bold;
 }
 
 nav ul li {
@@ -44,12 +50,12 @@ nav a {
   color: white;
   text-decoration: none;
   margin: 0 10px;
-  justify-content: center;
+  font-size: larger;
 }
 
-#nav-btn a:hover {
-  color: bisque;
-  font-size: 15px;
+nav a:hover {
+  color: rgb(102, 99, 99);
+  font-size: 18px;
 }
 
 /* home */
@@ -61,7 +67,7 @@ nav a {
 
 .homepage-image img {
   max-width: 100%;
-  height: auto;
+  height: min-content;
 }
 
 .image-overlay {
@@ -70,23 +76,18 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 .image-text {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
   padding: 30px;
 }
-.event-categories {
-  display: flex;
-}
-.category {
-  display: flex;
-}
+
 .image-text h1 {
   font-size: 50px;
   font-weight: bolder;
@@ -119,7 +120,7 @@ nav a {
   color: black;
   padding: 10px 20px;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 60px;
   background-color: bisque;
   border-radius: 4px;
 
@@ -130,58 +131,50 @@ nav a {
 }
 
 .read-more-button:hover {
-  background-color: rgb(83, 80, 80);
+  background-color: rgb(66, 65, 65);
   transition-property: color, background-color;
   transition-duration: 0.3s;
+  color: rgb(255, 255, 255);
+}
+/* footer */
+footer {
+  background-color: rgb(51, 51, 51);
   color: white;
-}
-.category a:hover {
-  display: none;
-  text-decoration: underline;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.event-categories {
+.footer-content {
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.category {
-  display: flex;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  margin-top: 20px;
-  background-color: bisque;
-  border-radius: 4px;
-
-  @media (max-width: 320px) {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-}
-
-.category a {
-  text-decoration: none;
-  color: #0056b3;
-  font-weight: bold;
-}
-.category:hover {
-  background-color: rgb(83, 80, 80);
-  transition-property: color, background-color;
-  transition-duration: 0.3s;
-  color: white;
-}
-img {
-  width: fit-content;
-  height: fit-content;
-}
-.options {
-  display: flex;
-  padding: 39px;
-}
-.event-categories {
-  margin-left: -63px;
-  padding: 30px;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
 }
